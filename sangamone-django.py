@@ -1,6 +1,6 @@
 import os
-dproject=input("Enter the django project name")
-dapp=input("Enter the django app name")
+dproject=input("Enter the django project name: ")
+dapp=input("Enter the django app name: ")
 os.chdir(dproject)
 os.chdir(f"./{dproject}")
 f1=open("settings.py","r+")
@@ -12,9 +12,8 @@ f1.write(a)
 f1.close()
 
 f1=open("urls.py","w")
-f1.write(f"""from django.urls import path
-from {dapp}.views import home
-urlpatterns = [path('', home),]""")
+f1.write(f"""from django.urls import path,include
+urlpatterns = [path("{dapp}" ,include("{dapp}.urls")),]""")
 f1.close()
 
 os.chdir(f"../{dapp}")
