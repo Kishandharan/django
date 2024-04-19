@@ -26,8 +26,8 @@ f1.write(any)
 f1.close()
 
 f1=open("urls.py","w")
-f1.write("""from django.urls import path
-from app1.views import home
+f1.write(f"""from django.urls import path
+from {dapp}.views import home
 urlpatterns = [path('', home),]""")
 f1.close()
 
