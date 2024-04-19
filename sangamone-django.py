@@ -17,7 +17,7 @@ from {dapp}.views import home
 urlpatterns = [path('', home),]""")
 f1.close()
 
-os.chdir(f".././{dapp}")
+os.chdir(f"../{dapp}")
 f1=open("views.py","w")
 any="""from django.shortcuts import render
 def home(request):
