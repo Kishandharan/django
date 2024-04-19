@@ -28,7 +28,7 @@ f1.close()
 f1=open("urls.py","w")
 f1.write(f"""from django.urls import path
 from {dapp}.views import home
-urlpatterns = [path('', home),]""")
+urlpatterns = [path('/{dapp}', home),]""")
 f1.close()
 
 
