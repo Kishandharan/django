@@ -2,11 +2,11 @@ import os
 dproject=input("Enter the django project name")
 dapp=input("Enter the django app name")
 os.chdir(dproject)
-os.chdir(f"../{dproject}/{dproject}")
+os.chdir(f"./{dproject}")
 f1=open("settings.py","r+")
 info1=f1.read()
 list1=[]
-a=info1.replace("'django.contrib.staticfiles',","'django.contrib.staticfiles',\n\t'app1'")
+a=info1.replace("'django.contrib.staticfiles',",f"'django.contrib.staticfiles',\n\t'{dapp}',")
 f1.seek(0)
 f1.write(a)
 f1.close()
@@ -30,6 +30,7 @@ f1.write("""from django.urls import path
 from app1.views import home
 urlpatterns = [path('', home),]""")
 f1.close()
+
 
 os.makedirs(f"templates/{dapp}")
 os.chdir(f"templates/{dapp}")
