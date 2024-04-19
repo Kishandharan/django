@@ -11,9 +11,10 @@ f1.seek(0)
 f1.write(a)
 f1.close()
 
-f1=open("urls.py","w")
-f1.write(f"""from django.urls import path,include
-urlpatterns = [path("{dapp}" ,include("{dapp}.urls")),]""")
+f1=open("urls.py","r+")
+info1=f1.read()
+any1=info1.replace("path('admin/', admin.site.urls),",f"""path('admin/', admin.site.urls),\n\turlpatterns = [path("{dapp}" ,include("{dapp}.urls")),]""")
+f1.write(any1)
 f1.close()
 
 os.chdir(f"../{dapp}")
