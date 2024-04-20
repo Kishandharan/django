@@ -1,7 +1,8 @@
 import os
 dproject=input("Enter the django project name: ")
 dapp=input("Enter the django app name: ")
-dexm=int(input("Enter the django app name: "))
+print("basic - 1\nfactorial - 2\nform - 3")
+dexm=int(input("Enter the number of example: "))
 os.chdir(dproject)
 os.chdir(f"./{dproject}")
 f1=open("settings.py","r+")
