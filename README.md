@@ -17,5 +17,5 @@
    ```shell
    cd project1/app1
    python manage.py runserver
-   '''
+   ```
 
