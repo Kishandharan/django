@@ -39,15 +39,6 @@ else:
     a=f1.read().replace("urlpatterns = [",f"urlpatterns = [\n\tpath('', home),").replace("from django.urls import path",f"from django.urls import path\nfrom {dapp}.views import home")
     f1.seek(0)
     f1.write(a)
-# else:
-#     for i in range(1,100,1):
-#         if f"/{i}" in f1.read():
-#             continue
-#         else:
-#             a=f1.read().replace("urlpatterns = [",f"urlpatterns = [\n\tpath('{i}', home),").replace("from django.urls import path",f"from django.urls import path\nfrom {dapp}.views import home")
-#             f1.seek(0)
-#             f1.write(a)
-#             break
 f1.close()
 
 
