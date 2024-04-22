@@ -1,8 +1,8 @@
 import os
 dproject=input("Enter the django project name: ")
 dapp=input("Enter the django app name: ")
-os.chdir(dproject)
-os.chdir(f"./{dproject}")
+os.chdir(dproject)             # Changing path to django folder
+os.chdir(f"./{dproject}")      # Entering inside the project file
 f1=open("settings.py","r+")
 info1=f1.read()
 if f"{dapp}'," not in info1:
@@ -23,15 +23,15 @@ else:
     f1.write(any1)
 f1.close()
 
-os.chdir(f"../{dapp}")
-f1=open("views.py","w")
+os.chdir(f"../{dapp}")        # Navigationg to app folder
+f1=open("views.py","w")       
 any="""from django.shortcuts import render
 def home(request):
     return render(request,'"""+dapp+"""/index.html',{'param1':"hello world"})"""
 f1.write(any)
 f1.close()
 
-open('urls.py','w')
+open('urls.py','w')          # Creating urls.py inside the app folder
 f1=open("urls.py","r+")
 if "urlpatterns = [" not in f1.read():
     f1.write(f"from django.urls import path\nfrom {dapp}.views import home\nurlpatterns = [\n\tpath('', home),]")
@@ -42,7 +42,7 @@ else:
 f1.close()
 
 
-os.makedirs(f"templates/{dapp}")
+os.makedirs(f"templates/{dapp}")     # Creating templates folder for index.py 
 os.chdir(f"templates/{dapp}")
 f1=open("index.html","w")
 f1.write("""<!DOCTYPE html>
