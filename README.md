@@ -8,9 +8,9 @@
    cd project1
    django-admin startapp app1
    ```
-4. Exicuting sangamone-django.py.
+4. Exicuting sangamone-django.py  (it asks for project and app name).
    ```shell
    cd ..
    cd ..
-   python sangamone-django.py (it asks for project and app name).
+   python sangamone-django.py
    ```
