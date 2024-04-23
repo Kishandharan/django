@@ -1,6 +1,7 @@
 # django
 
-## Mode of use
+## sangamone-django.py
+### Mode of use
 1. Adding sangamone-django.py file on the django folder where all projects are created.
 2. Creating django project and app.
    ```shell
@@ -18,4 +19,8 @@
    cd project1/app1
    python manage.py runserver
    ```
+## sangamone-django2.0.py
+### Under Testing
 
+## sangamone-django3.0.py
+### Under Testing
