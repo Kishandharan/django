@@ -1,7 +1,6 @@
 import sys
 import subprocess
 import os
-
 list1=[]
 for i in range(1,3):
     list1.append(sys.argv[i])
