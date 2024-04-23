@@ -1,4 +1,5 @@
 import os
+
 dproject=input("Enter the django project name: ")
 dapp=input("Enter the django app name: ")
 print("basic - 1\nfactorial - 2\nform - 3")
