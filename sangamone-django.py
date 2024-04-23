@@ -1,6 +1,7 @@
 import os
 dproject=input("Enter the django project name: ")
 dapp=input("Enter the django app name: ")
+
 os.chdir(dproject)             # Changing path to django folder
 os.chdir(f"./{dproject}")      # Entering inside the project file
 f1=open("settings.py","r+")
