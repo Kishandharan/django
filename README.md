@@ -11,7 +11,7 @@
    ```
 3. Exicuting sangamone-django.py  (it asks for project and app name).
    ```shell
-   cd ../..
+   cd ..
    python sangamone-django.py
    ```
 4. Running django project
