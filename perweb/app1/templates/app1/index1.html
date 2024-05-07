@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+    <style>
+        #div1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        <div id="div1">
+        {% for i in form %}
+        <div>
+        <label>{{i.label}}</label>
+        {{i}}</div><br>
+        {% endfor %}
+        <input type="submit">
+    </div>
+    </form>
+    
+    <h1>{{param1}}</h1>
+    
+</body>
+</html>
