@@ -55,7 +55,7 @@ os.chdir(f"{dapp}")
 f1=open("forms.py","w")
 any="""from django import forms
 
-class inputweb(forms.Form):
+class inputform(forms.Form):
     num1=forms.IntegerField(min_value=2,max_value=100,label="Enter Number")
 """
 f1.write(any)
@@ -63,17 +63,17 @@ f1.close()
 
 f1=open("views.py","w")
 any="""from django.shortcuts import render
-from """+dapp+""".forms import inputweb
+from """+dapp+""".forms import inputform
 def home(request):
     if request.method=="POST":
-        form1=inputweb(request.POST)
+        form1=inputform(request.POST)
         if form1.is_valid():
             data1=form1.cleaned_data
             n=data1.get("num1")
             fact1=factorial1(n)
             return render(request,'"""+dapp+"""/index.html',{'param1':fact1,'param2':n,"form":form1})
     else:
-        form1=inputweb()
+        form1=inputform()
     return render(request,'"""+dapp+"""/index.html',{"form":form1})
 
 def factorial1(n):
@@ -131,5 +131,5 @@ f1.write("""<!DOCTYPE html>
 
 f1.close()
 
-os.chdir(f'../../..')
-subprocess.run(['python','manage.py','runserver'])
+# os.chdir(f'../../..')
+# subprocess.run(['python','manage.py','runserver'])
